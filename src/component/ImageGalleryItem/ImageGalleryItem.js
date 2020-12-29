@@ -1,14 +1,14 @@
-import PT from 'prop-types';
-import style from './ImageGalleryItem.css';
+import PropTypes from 'prop-types';
+import './ImageGalleryItem.css';
 
 function ImageGalleryItem({ webformatURL, largeImageURL, tags, onOpenModal }) {
   return (
-    <li className={style.ImageGalleryItem}>
+    <li className="ImageGalleryItem">
       <img
         src={webformatURL}
         alt={tags}
         data-source={largeImageURL}
-        className={style.ImageGalleryItem_image}
+        className="ImageGalleryItem_image"
         onClick={onOpenModal}
       />
     </li>
@@ -16,9 +16,9 @@ function ImageGalleryItem({ webformatURL, largeImageURL, tags, onOpenModal }) {
 }
 
 ImageGalleryItem.propTypes = {
-  largeImageURL: PT.string.isRequired,
-  tags: PT.string.isRequired,
-  webformatURL: PT.string.isRequired,
+  largeImageURL: PropTypes.string.isRequired,
+  tags: PropTypes.string.isRequired,
+  webformatURL: PropTypes.string.isRequired,
 };
 
 export default ImageGalleryItem;

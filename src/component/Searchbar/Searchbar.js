@@ -1,16 +1,16 @@
-import style from './Searchbar.css';
-import PT from 'prop-types';
+import './SearchBar.css';
+import PropTypes from 'prop-types';
 
 function Searchbar({ onHandleSubmit, onSearchQueryChange, value }) {
   return (
-    <header className={style.Searchbar}>
-      <form className={style.SearchForm} onSubmit={onHandleSubmit}>
-        <button type="submit" className={style.SearchForm__button}>
-          <span className={style.SearchForm__button__label}>Search</span>
+    <header className="Searchbar">
+      <form className="SearchForm" onSubmit={onHandleSubmit}>
+        <button type="submit" className="SearchForm__button">
+          <span className="SearchForm__button__label">Search</span>
         </button>
 
         <input
-          className={style.SearchForm__input}
+          className="SearchForm__input"
           type="text"
           value={value}
           autoComplete="off"
@@ -24,9 +24,9 @@ function Searchbar({ onHandleSubmit, onSearchQueryChange, value }) {
 }
 
 Searchbar.propTypes = {
-  onHandleSubmit: PT.func.isRequired,
-  onSearchQueryChange: PT.func.isRequired,
-  value: PT.string.isRequired,
+  onHandleSubmit: PropTypes.func.isRequired,
+  onSearchQueryChange: PropTypes.func.isRequired,
+  value: PropTypes.string.isRequired,
 };
 
 export default Searchbar;

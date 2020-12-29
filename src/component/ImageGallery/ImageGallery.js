@@ -1,10 +1,37 @@
-import PT from 'prop-types';
+// import PT from 'prop-types';
+// import ImageGalleryItem from '../ImageGalleryItem/ImageGalleryItem';
+// import style from './ImageGallery.css';
+
+// function ImageGallery({ images, onOpenModal }) {
+//   return (
+//     <ul className={style.ImageGallery}>
+//       {images.map(({ id, webformatURL, largeImageURL, tags }) => (
+//         <ImageGalleryItem
+//           key={id}
+//           webformatURL={webformatURL}
+//           largeImageURL={largeImageURL}
+//           tags={tags}
+//           onOpenModal={onOpenModal}
+//         />
+//       ))}
+//     </ul>
+//   );
+// }
+
+// ImageGallery.propTypes = {
+//   images: PT.array.isRequired,
+//   onOpenModal: PT.func.isRequired,
+// };
+
+// export default ImageGallery;
+
+import PropTypes from 'prop-types';
 import ImageGalleryItem from '../ImageGalleryItem/ImageGalleryItem';
-import style from './ImageGallery.css';
+import './ImageGallery.css';
 
 function ImageGallery({ images, onOpenModal }) {
   return (
-    <ul className={style.ImageGallery}>
+    <ul className="ImageGallery">
       {images.map(({ id, webformatURL, largeImageURL, tags }) => (
         <ImageGalleryItem
           key={id}
@@ -19,8 +46,8 @@ function ImageGallery({ images, onOpenModal }) {
 }
 
 ImageGallery.propTypes = {
-  images: PT.array.isRequired,
-  onOpenModal: PT.func.isRequired,
+  images: PropTypes.array.isRequired,
+  onOpenModal: PropTypes.func.isRequired,
 };
 
 export default ImageGallery;

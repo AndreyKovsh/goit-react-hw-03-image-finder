@@ -1,13 +1,14 @@
 import { Component } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import apiService from './services';
-import Button from './component/Button';
-import ErrorView from './component/ErrorView';
-import ImageGallery from './component/ImageGallery';
-import Loader from './component/Loader';
-import Modal from './component/Modal';
-import Searchbar from './component/Searchbar';
+import apiService from './services/api-service';
+import Container from './component/Container/Container';
+import Searchbar from './component/Searchbar/SearchBar';
+import ImageGallery from './component/ImageGallery/ImageGallery';
+import Button from './component/Button/Button';
+import LoaderComponent from './component/Loader/Loader';
+import Modal from './component/Modal/Modal';
+import ErrorView from './component/ShowError/ShowError';
 
 class App extends Component {
   state = {
@@ -101,7 +102,7 @@ class App extends Component {
       error,
     } = this.state;
     return (
-      <div>
+      <Container>
         <Searchbar
           onHandleSubmit={this.handleSubmit}
           onSearchQueryChange={this.handleChange}
@@ -114,7 +115,7 @@ class App extends Component {
           <ImageGallery images={images} onOpenModal={this.onOpenModal} />
         )}
 
-        {isLoading && <Loader />}
+        {isLoading && <LoaderComponent />}
 
         {!isLoading && images.length > 0 && (
           <Button onLoadMore={this.onLoadMore} />
@@ -127,7 +128,7 @@ class App extends Component {
           />
         )}
         <ToastContainer autoClose={3700} />
-      </div>
+      </Container>
     );
   }
 }

@@ -1,16 +1,15 @@
-import React from 'react';
-import Spinner from 'react-loader-spinner';
-import style from './Loader.css';
+import Loader from 'react-loader-spinner';
+import './Loader.css';
 
 function LoaderItem() {
   return (
-    <div className={style.Loader}>
-      <Spinner
+    <div className="Loader">
+      <Loader
         type="Grid"
         color="#00BFFF"
         height={100}
         width={100}
-        timeout={3000}
+        timeout={0}
       />
     </div>
   );
